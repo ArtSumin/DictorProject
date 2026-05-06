@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Sandbox отключён для поддержки auto-paste (CGEvent keystroke simulation) -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+
+    <!-- Microphone: нужен для записи аудио -->
+    <key>com.apple.security.device.audio-input</key>
+    <true/>
+
+    <!-- Network Client: нужен для HTTP запросов к STT серверу -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+
+    <!-- User Selected Files (read): для выбора аудиофайлов через NSOpenPanel -->
+    <key>com.apple.security.files.user-selected.read-only</key>
+    <true/>
+</dict>
+</plist>

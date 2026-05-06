@@ -1,0 +1,16 @@
+services:
+  stt-server:
+    build:
+      context: ./stt-server
+    ports:
+      - "8000:8000"
+    volumes:
+      # ⚠️ Модели Whisper кешируются в volume, чтобы не скачивать заново
+      - dictor-models:/root/.cache/huggingface
+    environment:
+      - DICTOR_MODEL_SIZE=${DICTOR_MODEL_SIZE:-base}
+      - HF_TOKEN=${HF_TOKEN:-}
+    restart: unless-stopped
+
+volumes:
+  dictor-models:
