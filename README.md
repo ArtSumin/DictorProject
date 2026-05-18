@@ -61,6 +61,14 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
+Run server tests:
+
+```bash
+cd stt-server
+pip install -r requirements.txt -r requirements-dev.txt
+pytest -q
+```
+
 Default server: `http://127.0.0.1:8000`.
 
 Or via Docker Compose from the repo root:
@@ -92,6 +100,7 @@ Dictor/
 ```
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for architecture details.
+For server-only commands and details, see [stt-server/README.md](stt-server/README.md).
 
 ## License
 

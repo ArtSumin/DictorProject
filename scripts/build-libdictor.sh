@@ -22,6 +22,7 @@ for arg in "$@"; do
 done
 
 cd "$REPO_ROOT/dictor-cli"
+mkdir -p "$FFI_DIR"
 
 if [ "$UNIVERSAL" = true ]; then
   echo "Building for aarch64-apple-darwin..."
