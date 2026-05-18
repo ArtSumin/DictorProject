@@ -1,0 +1,4 @@
+module dictorFFI {
+    header "dictorFFI.h"
+    export *
+}

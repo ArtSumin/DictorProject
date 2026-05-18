@@ -5,6 +5,12 @@ let sharedFFISettings: [String: SettingValue] = [
     "SWIFT_INCLUDE_PATHS": "$(SRCROOT)/Dependencies/DictorFFI",
     "HEADER_SEARCH_PATHS": "$(SRCROOT)/Dependencies/DictorFFI",
     "LIBRARY_SEARCH_PATHS": "$(SRCROOT)/Dependencies/DictorFFI",
+    // Expose dictorFFI.modulemap so Swift can import RustBuffer, ForeignBytes, etc.
+    "OTHER_SWIFT_FLAGS": [
+        "$(inherited)",
+        "-Xcc",
+        "-fmodule-map-file=$(SRCROOT)/Dependencies/DictorFFI/dictorFFI.modulemap",
+    ],
     "OTHER_LDFLAGS": [
         "-ldictor",
         "-framework", "SystemConfiguration",
